@@ -1,0 +1,45 @@
+﻿<Window x:Class="TrackVoiceGUI.Windows.SetSeedValueWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrackVoiceGUI.Windows"
+        mc:Ignorable="d"
+        Title="Set Seed Value"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <StackPanel>
+        <GroupBox Header="Seed Value"
+               Margin="10"
+               Padding="1">
+            <StackPanel Orientation="Vertical">
+                <TextBox x:Name="SVTextBox_Seed_Value"
+                         IsReadOnly="False"
+                         Text="enter seed value..."
+                         Margin="10"
+                         Width="200"
+                         Height="25"
+                         VerticalAlignment="Center"
+                         Foreground="Gray"
+                         FontStyle="Italic"
+                         GotFocus="SVTextBox_Seed_Value_GotFocus"
+                         LostFocus="SVTextBox_Seed_Value_LostFocus"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Button x:Name="SVButton_Set"
+                            Content="Set"
+                            Width="60"
+                            Margin="10"
+                            Padding="3"
+                            Click="SVButton_Set_Click"/>
+                    <Button x:Name="SVButton_Close"
+                            Content="Close"
+                            Width="60"
+                            Margin="10"
+                            Padding="3"
+                            Click="SVButton_Close_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>

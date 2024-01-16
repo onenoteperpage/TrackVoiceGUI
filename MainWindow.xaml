@@ -1,0 +1,128 @@
+﻿<Window x:Class="TrackVoiceGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrackVoiceGUI"
+        mc:Ignorable="d"
+        Title="TrackVoice" Height="450" Width="800">
+    <StackPanel Margin="10">
+
+        <!-- Top Row -->
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="TrackVoice" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="0,10,0,10"/>
+
+                <TextBlock x:Name="DBSelectedPath"
+                           Text="Select DB or Create DB in config to start"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <Button Content="Select DB" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Click="SelectDB_Click"
+                        Padding="3"
+                        Margin="4"
+                        Width="80"/>
+                <Button x:Name="Button_RefreshDB"
+                        Content="Refresh DB"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Padding="3"
+                        Margin="4"
+                        Width="80"
+                        IsEnabled="False"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Second Row -->
+        <GroupBox Header="Cloud Provider"
+                  Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Margin="10" HorizontalAlignment="Center">
+                <ComboBox x:Name="ComboBox_CloudProvider"
+                          Width="150"
+                          Margin="5,0,5,0"
+                          IsEnabled="False"
+                          SelectionChanged="ComboBox_CloudProvider_SelectionChanged"/>
+
+                <ComboBox x:Name="ComboBox_Region"
+                          Width="80"
+                          Margin="5,0,5,0"
+                          IsEnabled="False"/>
+                
+                <ComboBox x:Name="ComboBox_Account"
+                          Width="400"
+                          Margin="5,0,5,0"/>
+                
+                <Button Content="Set Provider"
+                        Padding="3"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Third Section: GroupBox with CheckBoxes -->
+        <GroupBox Header="Report Options" Margin="0,0,0,10" Padding="5">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Content="Export CSV" Grid.Column="0"/>
+                    <CheckBox Content="PDF Report" Grid.Column="1"/>
+                    <CheckBox Content="Extended Report" Grid.Column="2"/>
+                </Grid>
+                <Grid Margin="0,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Content="Export XLSX" Grid.Column="0"/>
+                    <CheckBox Content="Option 5" Grid.Column="1"/>
+                    <CheckBox Content="Option 6" Grid.Column="2"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Fourth Section: Output GroupBox -->
+        <GroupBox Header="Output" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <!--<Label Content="Directory"/>-->
+                <TextBox x:Name="SqliteDBPath"
+                         IsReadOnly="True"
+                         Text=""
+                         Margin="10,0,10,0"
+                         Width="600"
+                         Height="25"
+                         VerticalAlignment="Center"/>
+                <Button Content="Set Path"
+                        Click="SetDirectory_Click"
+                        Padding="5,3,5,3"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Bottom Row -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Config" Margin="10" Padding="6" Click="OpenConfig_Click"/>
+            <Button Content="Run Reports" Margin="10" Padding="6"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

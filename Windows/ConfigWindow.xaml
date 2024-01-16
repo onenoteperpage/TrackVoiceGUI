@@ -1,0 +1,50 @@
+﻿<Window x:Class="TrackVoiceGUI.Windows.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrackVoiceGUI.Windows"
+        mc:Ignorable="d"
+        Title="Configuration" Height="440" Width="240"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <StackPanel>
+        <GroupBox Header="Config Settings"
+                  Margin="10"
+                  Padding="1">
+            <StackPanel Orientation="Vertical"
+                        Height="340">
+                <Button x:Name="CWButton_UpdateCredentials"
+                        Content="Update Credentials"
+                        Width="140"
+                        Margin="10"
+                        Padding="3"
+                        IsEnabled="False"
+                        Click="CWButton_UpdateCredentials_Click"/>
+                <Button x:Name="CWButton_InitDB"
+                        Content="Init Credentials DB"
+                        Width="140"
+                        Margin="10"
+                        Padding="3"
+                        Click="CWButton_InitDB_Click"/>
+                <Button x:Name="CWButton_SetSeedValue"
+                        Content="Set Seed Value"
+                        Width="140"
+                        Margin="10"
+                        Padding="3"
+                        IsEnabled="True"
+                        Click="CWButton_SetSeedValue_Click"/>
+            </StackPanel>
+        </GroupBox>
+        
+        <StackPanel VerticalAlignment="Bottom">
+            <Button x:Name="CWButton_Close"
+                    Content="Close Config"
+                    Width="140"
+                    Margin="10"
+                    Padding="3"
+                    Click="CWButton_Close_Click"/>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
